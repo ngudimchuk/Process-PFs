@@ -1,3 +1,5 @@
+Matlab 2017b scripts for analysis of curled protofilaments, traced in iMod software [ref, 2021]
+
 Open Application_PF_processing.mlapp
 %specify the name of your dataset
 %specify a folder where your files with PF tracings are located (.dat in iMod-generated format)
