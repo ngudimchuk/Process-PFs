@@ -1,4 +1,4 @@
-Matlab 2017b scripts for analysis of curled protofilaments, traced in iMod software [ref, 2021]
+Matlab 2017b scripts for analysis of curled protofilaments, traced in iMod software [refs: McIntosh et al., JCB 2018; Gudimchuk et al., Nature Commun., 2020; XXX]
 
 Open Application_PF_processing.mlapp
 %specify the name of your dataset
