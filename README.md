@@ -3,7 +3,7 @@ Matlab 2017b scripts for analysis of curled protofilaments (PFs), traced in IMOD
 
 Open Application_PF_processing.mlapp
 - specify the name of your dataset
-- specify a folder where your files with PF tracings are located (.dat in iMod-generated format)
+- specify a folder where your files with PF tracings are located (.dat in IMOD-generated format)
 - specify a folder to store the output files with analysis results (by default a new folder "Results" is made in the folder with raw data points)
 - specify the pixel size
 - check/uncheck boxes to view individual PFs before/after processing (press any button to continue or "close all figures" to stop)
