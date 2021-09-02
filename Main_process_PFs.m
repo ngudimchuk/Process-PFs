@@ -1,4 +1,4 @@
-function Main_process_PFs_3D(nameofdataset,folder,savefolder,pix,VisQ,view_PFs,mode)
+function Main_process_PFs(nameofdataset,folder,savefolder,pix,VisQ,view_PFs,mode)
 
 if isempty(savefolder)
     mkdir(strcat(folder,'\Results'));
