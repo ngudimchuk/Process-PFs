@@ -5,6 +5,7 @@ Open Application_PF_processing.mlapp
 - specify the name of your dataset
 - specify a folder where your files with PF tracings are located (.dat in IMOD-generated format)
 - specify a folder to store the output files with analysis results (by default a new folder "Results" will be created in the folder with the raw data points)
+- check/uncheck box to proccess 3d protofilaments (yes) or 2d protofilaments (no)
 - specify the pixel size
 - check/uncheck boxes to view individual PFs before/after processing (press any button to continue or "close all figures" to stop)
 - press "Start Processing" button
