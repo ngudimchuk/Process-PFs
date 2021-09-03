@@ -1,4 +1,4 @@
-function [mean_angle, std_angle,Dist_along_PF]=find_angle_vs_position_test(dA2,dL,maxk2)
+function [mean_angle, std_angle,Dist_along_PF]=find_angle_vs_position_test(dA2,dL,maxk2,pix)
 
 J=length(maxk2);
 
@@ -14,7 +14,7 @@ dAtip=0*dA2;
 for j=1:J
     dAtip(1:maxk2(j)-2,j)=flip(dA2(1:maxk2(j)-2,j));
 end
-Lstep=4;
+Lstep=4*pix;
 L_edges=Lstep/2:Lstep:max(max(Lfromtip));
 L_bins_fromwall=discretize(Lfromwall,L_edges);
 L_bins_fromtip=discretize(Lfromtip,L_edges);
