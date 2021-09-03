@@ -467,7 +467,7 @@ nanmean(sum(dA2,2,'omitnan')./sum(isnan(dA2)==0 & dA2~=0,2))
 disp('Mean helix angle per nm, deg')
 nanmean(sum(dB2,2,'omitnan')./sum(isnan(dB2)==0 & dB2~=0,2))
 
-[meancurvfromtip, stdcurvfromtip, Dist_along_PF]=find_angle_vs_position_test(dA2,dL,maxk2);
+[meancurvfromtip, stdcurvfromtip, Dist_along_PF]=find_angle_vs_position_test(dA2,dL,maxk2,pix);
 err=stdcurvfromtip(1:length(Dist_along_PF));
 
 Xfit=Dist_along_PF;
