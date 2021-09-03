@@ -1,12 +1,12 @@
 function Main_process_PFs(nameofdataset,folder,savefolder,pix,VisQ,view_PFs,mode)
 
 if isempty(savefolder)
-    mkdir(strcat(folder,'\Results'));
-    savefolder=strcat(folder,'\Results');
+    mkdir(strcat(folder,'/Results'));
+    savefolder=strcat(folder,'/Results');
 end
 
 %% Converting raw PF tracings data from iMOD in .dat format
-fnames = dir(strcat(folder,'\*.dat'));
+fnames = dir(strcat(folder,'/*.dat'));
 
 X=[];
 Z=[];
@@ -21,7 +21,7 @@ ii=1;
 while isempty(strfind(fnames(ii).name,'start')) %for each POINT file in folder
     
     % read data from POINT file
-    fid=fopen([strcat(folder,'\'),fnames(ii).name]);
+    fid=fopen([strcat(folder,'/'),fnames(ii).name]);
     fnames(ii).name;
     tline = fgetl(fid);
     tlines = cell(0,1);
@@ -79,10 +79,10 @@ end
 
 % create pf2src
 mkdir([folder,'_processed_coordinates']);
-writetable(table(X),[folder,'_processed_coordinates\x.txt'],'Delimiter','\t','WriteVariableNames',0);
-writetable(table(Z),[folder,'_processed_coordinates\z.txt'],'Delimiter','\t','WriteVariableNames',0);
+writetable(table(X),[folder,'_processed_coordinates/x.txt'],'Delimiter','\t','WriteVariableNames',0);
+writetable(table(Z),[folder,'_processed_coordinates/z.txt'],'Delimiter','\t','WriteVariableNames',0);
 if mode == 1
-    writetable(table(Y),[folder,'_processed_coordinates\y.txt'],'Delimiter','\t','WriteVariableNames',0);
+    writetable(table(Y),[folder,'_processed_coordinates/y.txt'],'Delimiter','\t','WriteVariableNames',0);
 end
 
 
@@ -307,9 +307,9 @@ hx.FontSize=14;
 hy.FontSize=14;
 set(gca,'fontsize',14)
 
-saveas(fig_len,[savefolder,'\histlength.jpeg']);
-dlmwrite([savefolder,'\hist_PF_length.txt'],[len_bin_middles' Nlen'],'delimiter','\t','newline','pc');
-dlmwrite([savefolder,'\MeanL_StdL_numL.txt'], [mean(L) std(L) length(L)],'delimiter','\t','newline','pc');
+saveas(fig_len,[savefolder,'/histlength.jpeg']);
+dlmwrite([savefolder,'/hist_PF_length.txt'],[len_bin_middles' Nlen'],'delimiter','\t','newline','pc');
+dlmwrite([savefolder,'/MeanL_StdL_numL.txt'], [mean(L) std(L) length(L)],'delimiter','\t','newline','pc');
 disp([mean(L) std(L) length(L)]);
 
 %% smooth PFs
@@ -372,7 +372,7 @@ else
 end
 hT2.FontSize=14;
 set(gca,'fontsize',14)
-saveas(fig_PFs2,[savefolder,'\plot_PFs.jpeg']);
+saveas(fig_PFs2,[savefolder,'/plot_PFs.jpeg']);
 
 %% plot average PF shapes
 plotshape=0;
@@ -410,9 +410,9 @@ if plotshape==1
     if mode == 1
         fig_avshapey=figure;
         errorbar(Y_average,Z_average,Z_SEM,'r-');
-        saveas(fig_avshapey,[savefolder,'\average_PF_shapey.jpeg']);
+        saveas(fig_avshapey,[savefolder,'/average_PF_shapey.jpeg']);
     end
-    saveas(fig_avshapex,[savefolder,'\average_PF_shapex.jpeg']);
+    saveas(fig_avshapex,[savefolder,'/average_PF_shapex.jpeg']);
 end
 
 %% histogram of all PF angles, initial angles
@@ -447,12 +447,12 @@ hy1.FontSize=14;
 set(gca,'fontsize',14)
 
 
-dlmwrite([savefolder,'\Ang-ALL_mean_med_SD_N.txt'],[mean(dA_all(abs(dA_all)<180))...
+dlmwrite([savefolder,'/Ang-ALL_mean_med_SD_N.txt'],[mean(dA_all(abs(dA_all)<180))...
     median(dA_all(abs(dA_all)<180)) std(dA_all(abs(dA_all)<180))...
     length(dA_all(abs(dA_all)<180))],'delimiter','\t','newline','pc');
-dlmwrite([savefolder,'\hist_ang-all.txt'],[curv_bin_middles' N_dA_all'],'delimiter','\t','newline','pc');
+dlmwrite([savefolder,'/hist_ang-all.txt'],[curv_bin_middles' N_dA_all'],'delimiter','\t','newline','pc');
 
-saveas(fig_ang,[savefolder,'\angles.jpeg']);
+saveas(fig_ang,[savefolder,'/angles.jpeg']);
 
 %% mean angle as a function of position along PF
 %smooth data with moving average filter with trimmed ends
@@ -499,10 +499,10 @@ hx1.FontSize=14;
 hy1.FontSize=14;
 set(gca,'fontsize',14)
 
-dlmwrite([savefolder,'\ang_vs_tip.txt'],[Dist_along_PF',...
+dlmwrite([savefolder,'/ang_vs_tip.txt'],[Dist_along_PF',...
     (meancurvfromtip(1:length(Dist_along_PF)))',...
     (stdcurvfromtip(1:length(Dist_along_PF)))'],'delimiter','\t','newline','pc');
-dlmwrite([savefolder,'\ang_vs_tip_fit.txt'],[xnum' (f(xnum))],'delimiter','\t','newline','pc');
+dlmwrite([savefolder,'/ang_vs_tip_fit.txt'],[xnum' (f(xnum))],'delimiter','\t','newline','pc');
 
 %% view 3D PFs
 curv=[];
