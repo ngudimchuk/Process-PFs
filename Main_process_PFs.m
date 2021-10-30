@@ -155,14 +155,6 @@ if mode == 1
 end
 Zt_raw(:,jexl)=[];
 
-% delete long PFs
-longpf=find(sum(abs(Zt_raw)>30)>0);
-Xt_raw(:,longpf)=[];
-if mode == 1
-    Yt_raw(:,longpf)=[];
-end
-Zt_raw(:,longpf)=[];
-
 if mode == 1
     Nz=(abs(Xt_raw)+abs(Yt_raw)+abs(Zt_raw))~=0;
 else
