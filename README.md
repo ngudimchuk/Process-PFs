@@ -9,6 +9,7 @@ Open Application_PF_processing.mlapp
 - specify the pixel size
 - check/uncheck boxes to view individual PFs before/after processing (press any button to continue or "close all figures" to stop)
 - press "Start Processing" button
+- (optionally): to exclude outlier protofilament tracings from analysis, create 'excludePFs.txt' file in the folder containing your .dat files. The txt file should contain a vector of numbers for the protofilaments to be excluded, e.g. 1 20 21 30
 
 Output txt files:
 
