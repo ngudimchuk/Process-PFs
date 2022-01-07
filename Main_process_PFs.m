@@ -117,9 +117,10 @@ else
     jexcl2=[];
 end
     
-% jexcl2=[65 131 282];
 Xt_raw(:,jexcl2)=[];
-%Yt_raw(:,jexcl2)=[];
+if mode==1
+    Yt_raw(:,jexcl2)=[];
+end
 Zt_raw(:,jexcl2)=[];
 
 %determine the number of points (kmax) for each PF
