@@ -293,6 +293,7 @@ hy2.FontSize=14;
 set(gca,'fontsize',14)
 
 saveas(fig_len,[savefolder,'/histlength.jpeg']);
+dlmwrite([savefolder,'/all_PF_lengths.txt'],L','delimiter','\t','newline','pc');
 dlmwrite([savefolder,'/hist_PF_length.txt'],[len_bin_middles' Nlen'],'delimiter','\t','newline','pc');
 dlmwrite([savefolder,'/MeanL_StdL_numL.txt'], [mean(L) std(L) length(L)],'delimiter','\t','newline','pc');
 disp([mean(L) std(L) length(L)]);
@@ -456,7 +457,7 @@ hx1.FontSize=14;
 hy1.FontSize=14;
 set(gca,'fontsize',14)
 
-
+dlmwrite([savefolder,'/all_angles.txt'],dA_all','delimiter','\t','newline','pc');
 dlmwrite([savefolder,'/Ang-ALL_mean_med_SD_N.txt'],[mean(dA_all(abs(dA_all)<180))...
     median(dA_all(abs(dA_all)<180)) std(dA_all(abs(dA_all)<180))...
     length(dA_all(abs(dA_all)<180))],'delimiter','\t','newline','pc');
