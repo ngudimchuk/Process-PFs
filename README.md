@@ -14,9 +14,11 @@ Open Application_PF_processing.mlapp
 Output txt files:
 
 - ang_vs_tip - dependence of average PF curvature on the distance from PF tip {distance(nm); curvature (deg/dimer); SD of curvature (deg/dimer)} 
-- ang_vs_tip_fit - weighted linear fit of dependence of average PF curvature on the distance from PF tip {distance(nm)} 
+- ang_vs_tip_fit - weighted linear fit of dependence of average PF curvature on the distance from PF tip {distance(nm)}
+- all_angles - individual values of all angles between consecutive pairs of PF segments (deg/dimer) 
 - Ang_ALL_mean_med_SD_N - average PF curvature (deg/dimer); median PF curvature (deg/dimer); SD of PF curvature (deg/dimer); N of angles 
 - hist_ang_all - histogram of PF curvatures
+- all_PF_lengths - individual values of PF lengths (nm)
 - hist_PF_length - histogram of PF lengths
 - MeanL_StdL_numL - mean PF length, SD pf PF length, N of PFs
 
