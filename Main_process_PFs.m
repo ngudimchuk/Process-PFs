@@ -521,6 +521,30 @@ dlmwrite([savefolder,'/ang_vs_tip.txt'],[Dist_along_PF',...
     (stdcurvfromtip(1:length(Dist_along_PF)))'],'delimiter','\t','newline','pc');
 dlmwrite([savefolder,'/ang_vs_tip_fit.txt'],[xnum' (f(xnum))],'delimiter','\t','newline','pc');
 
+%% dynamic persistence length
+if mode==0 
+    smoothwind=7;
+    addwall=smoothwind;
+    cuttips=0;
+    [Xt1, Zt1, maxk1]=filter_PFs(Xt, Zt, maxk, smoothwind,2,addwall,cuttips,mode);
+    [PL1,xX,zZ,logsem,fPL]=bootstrapPL1(Xt1, Zt1, maxk1,1,0,2.5);
+    for i=1:100
+        [PL(i),~,~,~,~]=bootstrapPL1(Xt1, Zt1, maxk1,0,1,2.5);
+    end
+
+    MEAN_PL=PL1;
+    STD_PL=std(PL);
+
+    set(gca,'fontsize',14)
+    image=getframe(gcf);
+    imwrite(image.cdata,[savefolder,'\PL.jpeg']);
+    fitZ=fPL(xX);
+    dlmwrite([savefolder,'\dist_logcos_errlogcos.txt'],[xX' zZ' logsem' fitZ],'delimiter','\t','newline','pc');
+    dlmwrite([savefolder,'\PL_SDPL.txt'],[MEAN_PL STD_PL],'delimiter','\t','newline','pc');
+else
+    disp('Please, use the 2D mode to calculate persistence length of the PFs');
+end
+
 %% view 3D PFs
 curv=[];
 if VisQ==1
