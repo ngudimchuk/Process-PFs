@@ -22,7 +22,7 @@ Output txt files:
 - hist_PF_length - histogram of PF lengths
 - MeanL_StdL_numL - mean PF length, SD pf PF length, N of PFs
 - PL_SDPL - dynamic persistence length, SD of dynamic the persistence length
-- dist_logcos_errlogcos - logarithm of the averaged cosine of the deflection of the protofilaments from their average shape vs. the distance along PF (nm) vs. error of the measurement
+- dist_logcos_errlogcos - distance along the PF (nm) vs. the logarithm of the averaged cosine of the deflection of the protofilaments from their average shape vs. error of the measurement of the log(cos<teta>) vs. the ordinate of the weighted linear fit
 
 
 
@@ -30,4 +30,4 @@ Output jpeg/png files:
 - angles - histogram of PF curvatures;
 - histlegth - histogram of PF lengths;
 - plotPFs - all PF traces, smoothed
-- PL - logarithm of the averaged cosine of the deflection of the protofilaments from their average shape (blue) and a linear fit (red)
+- PL - logarithm of the averaged cosine of the deflection of the protofilaments from their average shape (blue) and a weighted linear fit (red)
