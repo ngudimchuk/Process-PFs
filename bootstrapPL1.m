@@ -79,8 +79,7 @@ if plotflag==1
     errorbar(xX,yY,logsem,'b.-');
     hold on
     plot(xX,f(xX),'r-');
-    ax=axis;
-    axis([0 ax(2) ax(3) 0]);
+
     hT1=title([nameofdataset,' - aligned by tip']);
     hx1=xlabel('distance along PF,nm');
     hy1=ylabel('log(<cos(teta)>)');
