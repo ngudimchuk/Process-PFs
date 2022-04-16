@@ -537,10 +537,10 @@ if mode==0
 
     set(gca,'fontsize',14)
     image=getframe(gcf);
-    imwrite(image.cdata,[savefolder,'\PL.jpeg']);
+    imwrite(image.cdata,[savefolder,'/PL.jpeg']);
     fitZ=fPL(xX);
-    dlmwrite([savefolder,'\dist_logcos_errlogcos.txt'],[xX' zZ' logsem' fitZ],'delimiter','\t','newline','pc');
-    dlmwrite([savefolder,'\PL_SDPL.txt'],[MEAN_PL STD_PL],'delimiter','\t','newline','pc');
+    dlmwrite([savefolder,'/dist_logcos_errlogcos.txt'],[xX' zZ' logsem' fitZ],'delimiter','\t','newline','pc');
+    dlmwrite([savefolder,'/PL_SDPL.txt'],[MEAN_PL STD_PL],'delimiter','\t','newline','pc');
 else
     disp('Please, use the 2D mode to calculate persistence length of the PFs');
 end
