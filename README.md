@@ -10,6 +10,7 @@ Open Application_PF_processing.mlapp
 - check/uncheck boxes to view individual PFs before/after processing (press any button to continue or "close all figures" to stop)
 - press "Start Processing" button
 - (optionally): to exclude outlier protofilament tracings from analysis, create 'excludePFs.txt' file in the folder containing your .dat files. The txt file should contain a vector of numbers for the protofilaments to be excluded, e.g. 1 20 21 30
+- (optionally): exclude protofilament tracings shorter than a given length from analysis by providing the lower length limit in tubulin dimers (default is 0 dimers)
 
 Output txt files:
 
