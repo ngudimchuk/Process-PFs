@@ -1,29 +1,28 @@
 function [L, dLmedian]=PF_lengths_sub(Xt, Yt, Zt, maxk, mode)
 
 %% Calculating PF lengths
-J=length(maxk);
+
 if mode == 1
     Nz=(abs(Xt)+abs(Yt)+abs(Zt))~=0;
 else
     Nz=(abs(Xt)+abs(Zt))~=0;
 end
-Ytcum=cumsum(Nz,1,'reverse');
-IndexToNonZero=(Ytcum'>1)';
-IndexToNonZero(end,:)=[];
+IndexToNonZero=Nz;
+IndexToNonZero(1,:)=[];
 
 %calculate the length along each PF
-dXt=(diff(Xt));
+dXt=diff(Xt);
 if mode == 1
-    dYt=(diff(Yt));
+    dYt=diff(Yt);
 end
-dZt=(diff(Zt));
+dZt=diff(Zt);
 if mode == 1
     dL=sqrt(dXt.^2+dYt.^2+dZt.^2);
 else
     dL=sqrt(dXt.^2+dZt.^2);
 end
 
-dLmedian=median(median(dL(IndexToNonZero)));
+dLmedian=median(dL(IndexToNonZero),'omitnan');
 
 %remove fragments of zero length
 szL=size(dL);
