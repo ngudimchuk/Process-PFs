@@ -37,13 +37,13 @@ if smoothdata==1 % use simple moving average filter
 elseif smoothdata==2 % use quadratic loess smooth
     for j=1:J
         XX=Xt(1:maxk(j),j);
-        Xt(1:maxk(j),j)=smooth(XX,smoothwind/maxk(j),'loess');
+        Xt(1:maxk(j),j)=smooth(XX,max([smoothwind/maxk(j),0.1]),'loess');
         if mode == 1
         YY=Yt(1:maxk(j),j);
-        Yt(1:maxk(j),j)=smooth(YY,smoothwind/maxk(j),'loess');
+        Yt(1:maxk(j),j)=smooth(YY,max([smoothwind/maxk(j),0.1]),'loess');
         end
         ZZ=Zt(1:maxk(j),j);
-        Zt(1:maxk(j),j)=smooth(ZZ,smoothwind/maxk(j),'loess');
+        Zt(1:maxk(j),j)=smooth(ZZ,max([smoothwind/maxk(j),0.1]),'loess');
     end
 end
 
