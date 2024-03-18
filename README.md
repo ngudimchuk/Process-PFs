@@ -43,10 +43,10 @@ The program generates simulated PF tracings, having user-defined properties.
 In the MATLAB Command Window:
 - Run generate_test_PFs
 - Enter the number of protofilaments.
-- Enter the curvature, deg/dimer: 2.
-- Enter the standard deviation of curvature, deg/dimer: 10.
-- Enter the gradient of curvature, deg/dimer^2: 0.
-- Select the type of PF length distribution: fixed / uniform / exponential / normal / gamma.
+- Enter the curvature, deg/dimer: e.g. 2.
+- Enter the standard deviation of curvature, deg/dimer: e.g. 10.
+- Enter the gradient of curvature, deg/dimer^2: e.g. 0.
+- Select the type of PF length distribution: fixed / uniform / exponential / normal / gamma
 - Specify the parameters of the PF length distribution.
 The program will create a folder named "simulated_coordinates" with "x.txt," "y.txt," and "z.txt" files containing PF coordinates.
 
