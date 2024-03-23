@@ -27,7 +27,7 @@ L_bins_fromtip_trimmed=L_bins_fromtip(2:end-1,:);
 L_bins_fromtip_trimmed(isnan(dAtip))=NaN;
 
 term_num=L_bins_fromtip_trimmed==term_bin;  %terminal curvature is determined in the interval from 4 nm to 8 nm (if Lstep=4nm, smoothwindow2=3).
-term_ang=mean(dAtip(sum(term_num,2)>0,:),1);
+term_ang=mean(dAtip(sum(term_num,2)>0,:),1,'omitnan');
 
 for i=1:length(L_edges-1)
     numwall(i)=sum(sum(L_bins_fromwall_trimmed==i));
