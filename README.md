@@ -50,4 +50,6 @@ In the MATLAB Command Window:
 - Specify the parameters of the PF length distribution.
 The program will create a folder named "simulated_coordinates" with "x.txt," "y.txt," and "z.txt" files containing PF coordinates.
 
+System requirements
 *** The code was tested on Microscoft Windows 11, Matlab 2017b and Matlab 2021a.
+
